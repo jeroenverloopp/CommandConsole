@@ -1,5 +1,4 @@
-﻿using CommandConsole.Models;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace CommandConsole.UI
@@ -9,7 +8,7 @@ namespace CommandConsole.UI
         [SerializeField] private Color _normalColor , _warningColor, _errorColor;
         [SerializeField] private TMP_InputField _textInput;
 
-        public void Set(Models.Message message)
+        public void Set(CommandConsole.Message message)
         {
             switch (message.Type)
             {

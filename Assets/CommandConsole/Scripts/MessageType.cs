@@ -1,4 +1,4 @@
-﻿namespace CommandConsole.Models
+﻿namespace CommandConsole
 {
     public enum MessageType
     {

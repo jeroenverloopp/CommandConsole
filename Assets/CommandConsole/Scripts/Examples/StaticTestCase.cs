@@ -1,9 +1,15 @@
-﻿namespace CommandConsole
+﻿namespace CommandConsole.Examples
 {
     public static class StaticTestCase
     {
         [Command("Static")]
-        public static void HelloWorld(string input = "")
+        public static void HelloWorld()
+        {
+            CommandManager.Instance.SendMessage($"Hello world!");
+        }
+        
+        [Command("Static")]
+        public static void HelloWorld(string input)
         {
             CommandManager.Instance.SendMessage($"Static :: Hello world {input}");
         }

@@ -1,16 +1,12 @@
-﻿using CommandConsole.Models;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace CommandConsole.UI
 {
     public class MessageList : MonoBehaviour
     {
-
         [SerializeField] private Message _messagePrefab;
         [SerializeField] private RectTransform _messageContainer;
-        [SerializeField] private ScrollRect _scrollRect;
-        
+
         private void Awake()
         {
             CommandManager.Instance.OnMessageSend += OnMessageSend;
@@ -21,8 +17,13 @@ namespace CommandConsole.UI
             CommandManager.Instance.OnMessageSend += OnMessageSend;
         }
 
-        private void OnMessageSend(Models.Message message)
+        private void OnMessageSend(CommandConsole.Message message)
         {
+            if (message == null)
+            {
+                Debug.LogError($"MessageList :: message is null");
+                return;
+            }
             if (_messagePrefab == null)
             {
                 Debug.LogError($"MessageList :: _messagePrefab is null");

@@ -1,5 +1,5 @@
 ﻿
-namespace CommandConsole.Models
+namespace CommandConsole
 {
     public class Message
     {
